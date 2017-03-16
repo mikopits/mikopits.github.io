@@ -1,0 +1,44 @@
+#mal_control_strip {
+  background-color: transparent !important;
+  background-image: url('http://i.imgur.com/oih04To.png') !important;
+  position: fixed;
+  top: 0;
+  z-index: 10 !important;
+}
+#mal_control_strip td {
+  height: 24px !important;
+  border-right-color: rgba(0,0,0,0.8) !important;
+}
+#mal_control_strip div {display: inline;}
+
+#mal_cs_pic img {height: 24px !important; width: auto !important;}
+
+#mal_cs_listinfo {position: relative; width: auto !important; display: block;}
+#mal_cs_listinfo div:first-of-type {display: inline-block;}
+#mal_cs_listinfo div:first-of-type:before {content: 'Logged in as ';}
+#mal_cs_listinfo div:last-of-type {display: inline-block;}
+#mal_cs_listinfo div:last-of-type a {text-decoration: none;}
+#mal_cs_listinfo div:last-of-type a:hover {text-decoration: underline;}
+
+#mal_cs_links {width: 90px !important}
+#mal_cs_links a {
+  background-image: url('http://i.imgur.com/EgA1UWr.png') !important;
+  width: 16px; height: 16px;
+  content: none;
+  display: inline-block !important;
+  color: transparent !important;
+  letter-spacing: -1ex;
+  font-size: xx-small
+}
+#mal_cs_links div:first-of-type:after {content: '\a0'}
+#mal_cs_links div:first-of-type a:first-of-type {background-position: 0px 0px}
+#mal_cs_links div:first-of-type a:last-of-type {background-position: -16px 0px}
+#mal_cs_links div:last-of-type a:first-of-type {background-position:-32px 0px}
+#mal_cs_links div:last-of-type a:last-of-type {background-position:-48px 0px}
+
+#mal_cs_otherlinks div:last-of-type {float:right; padding-right:150px}
+#mal_cs_otherlinks div:first-of-type {float:left}
+
+#mal_cs_powered img {display:none}
+
+#searchBox {margin-top: -2px !important; width: 135px !important}

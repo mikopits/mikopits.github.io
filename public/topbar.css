@@ -1,6 +1,6 @@
 #mal_control_strip {
   background-color: transparent !important;
-  background-image: url('http://i.imgur.com/oih04To.png') !important;
+  background-image: url('https://i.imgur.com/oih04To.png') !important;
   position: fixed;
   top: 0;
   z-index: 10 !important;
@@ -22,7 +22,7 @@
 
 #mal_cs_links {width: 90px !important}
 #mal_cs_links a {
-  background-image: url('http://i.imgur.com/EgA1UWr.png') !important;
+  background-image: url('https://i.imgur.com/EgA1UWr.png') !important;
   width: 16px; height: 16px;
   content: none;
   display: inline-block !important;

@@ -1,0 +1,444 @@
+@import url(https://dl.dropboxusercontent.com/u/51521170/css_import_shy_imouto.css);
+@import url(http://fonts.googleapis.com/css?family=Autour+One);
+@import url(https://dl.dropboxusercontent.com/u/51521170/topbar.css);
+@import url(https://dl.dropboxusercontent.com/u/51521170/reviews.css);
+
+/* TODO: feels a little cluttered overall now */
+/* FIXME: laggy on large lists*/
+body {
+  font-size: 11.00px;
+  font-family: Autour One;
+  background-image: url(http://i.imgur.com/MdwnHMv.jpg);
+  background-color: #FFF4F0;
+  background-attachment: fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  text-rendering: optimizeLegibility;
+  /* TODO: text not rendered properly in safari */
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+#list_surround {
+  left: 112px;
+  width: 666px;
+  padding-bottom: 10px;
+  position: absolute;
+}
+
+@media screen and (max-width: 1166px) {
+  #list_surround {
+    width: 58%;
+  }
+}
+
+/* Chrome, Opera, Safari compatability */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  td[class^='td']:nth-of-type(2) {
+    width: 406px !important;
+  }
+  @media screen and (max-width: 1166px) {
+    td[class^='td']:nth-of-type(2) {
+      width: 66% !important;
+    }
+  }
+}
+
+tr:hover td.td1 a, tr:hover td.td2 a {
+  color: rgba(255, 180, 170, 1);
+  transition: all 0.4s ease 0s;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.td1 {
+  background-color: rgba(245,247,250,.95);
+}
+
+.td2 {
+  background-color: rgba(231,241,247,.95); 
+}
+
+td[class^='td'] {
+  padding: 2px;
+  height: 30px;
+}
+
+td[class^='td']:hover {
+  height: 60px;
+}
+
+[width="100%"]:not([class*="header_"]):hover {
+  background-image: url(http://i.imgur.com/s1bgfZ3.png);
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+
+.table_header {
+  background-color: rgba(198, 108, 133, 1);
+  padding: 2px;
+}
+
+.table_header a {
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+}
+
+.table_header:nth-of-type(1) {
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+}
+
+/* Side menu bar */
+/* TODO: still looks like shit */
+
+.status_selected {
+  background-color: rgba(198, 108, 133, .8);
+  background-image: url(http://i.imgur.com/CURAduO.gif);
+  background-position: 50%;
+}
+
+.status_selected a {
+  display: none !important;
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+}
+
+@-webkit-keyframes gradient-fade-in {
+  from {opacity: 0.9;}
+  to {opacity: 1;}
+}
+
+@-webkit-keyframes gradient-fade-out {
+  from {opacity: 1;}
+  to {opacity: 0.9;}
+}
+
+@keyframes gradient-fade-in {
+  from {opacity: 0.9;}
+  to {opacity: 1;}
+}
+
+@keyframes gradient-fade-out {
+  from {opacity: 1;}
+  to {opacity: 0.9;}
+}
+
+.status_not_selected {
+  background-color: rgba(198, 108, 133, .8);
+  -webkit-animation-name: gradient-fade-out;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-direction: forwards;
+  animation-name: gradient-fade-out;
+  animation-duration: 1s;
+  animation-direction: forwards;
+}
+
+.status_not_selected a {
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+}
+
+.status_not_selected:hover {
+  background-image: url(http://i.imgur.com/oNKwQLq.png);
+  background-blend-mode: overlay;
+  -webkit-animation-name: gradient-fade-in;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-name: gradient-fade-in;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+td[class^="status_"] {
+  position: fixed !important;
+  display: inline-block;
+  left: 4px;
+  width: 104px;
+  height: 40px;
+  vertical-align: middle;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+}
+
+td[class^="status_"]:hover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(198, 108, 133, .8);
+}
+
+td[class^="status_"].status_selected:hover {
+  background:
+    url(http://i.imgur.com/Q5qB8K7.gif) 10%,
+    url(http://i.imgur.com/CURAduO.gif) 50%,
+    url(http://i.imgur.com/Q8uE2E7.gif) 90%;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-color: rgba(198, 108, 133, .8);
+}
+
+td[class^="status_"]:nth-of-type(1) {
+  border-radius: 10px 10px 0px 0px;
+  top: 102px;
+}
+
+td[class^="status_"]:nth-of-type(2) {
+  top: 142px;
+}
+
+td[class^="status_"]:nth-of-type(3) {
+  top: 182px;
+}
+
+td[class^="status_"]:nth-of-type(4) {
+  top: 222px;
+}
+
+td[class^="status_"]:nth-of-type(5) {
+  top: 262px;
+}
+
+td[class^="status_"]:nth-of-type(6) {
+  border-radius: 0px 0px 10px 10px;
+  top: 302px;
+}
+
+td[class^="status_"] a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 22%;
+  white-space: pre-line;
+}
+
+/* Font overrides, Headers */
+
+.header_title {
+  font-weight: bold;
+}
+
+.header_cw {
+  background-image: url(http://i.imgur.com/VGGLdot.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom right;
+}
+
+.header_completed {
+  background-image: url(http://i.imgur.com/1bWNn9S.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom right;
+}
+
+.header_onhold {
+  background-image: url(http://i.imgur.com/ip0OLlt.png);
+  background-repeat: no-repeat;
+  background-size: 80px;
+  background-position: bottom right;
+}
+
+.header_dropped {
+  background-image: url(http://i.imgur.com/5mZYai3.png);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 59px;
+}
+
+.header_ptw {
+  background-image: url(http://i.imgur.com/8wa7myk.png);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 59px;
+}
+
+.category_totals {
+  background-color: rgba(198, 108, 133, 1);
+  padding: 3px;
+  text-align: center;
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+}
+
+td[class^='td']:nth-of-type(1) {
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+}
+
+td[class^='td']:nth-of-type(2) {
+  padding-left: 46px;
+}
+
+td[class^='td']:nth-of-type(2) a {
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+}
+
+td[class^='td']:nth-of-type(3), td[class^='td']:nth-of-type(3) a {
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+}
+
+td[class^='td']:nth-of-type(4) {
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+}
+
+td[class^='td']:nth-of-type(5), td[class^='td']:nth-of-type(5) a {
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+}
+
+#grand_totals {
+  background-color: rgba(198, 108, 133, 1);
+  padding: 3px;
+  text-align: center;
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+}
+
+[class^="header_"] * {
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 1px 0px 1px, #000 0px 1px 1px, #000 1px 1px 1px,
+               #000 1px 0px 1px, #000 0px 1px 1px, #000 1px 1px 1px,
+               #000 -1px 0px 1px, #000 0px -1px 1px, #000 0px 0px 1px;
+  font-size: 40px;
+  line-height: 24px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+
+.animetitle + small {
+  color: #C66C85;
+  font-weight: bold;
+  left: 4%;
+  margin-top: 74px;
+  padding-right: 4px;
+  text-overflow: ellipsis;
+  z-index: 1;
+}
+
+.animetitle {
+  padding-right: 4px;
+}
+
+/* Cover images */
+
+.hide {
+  background-color: rgba(192, 108, 133, 0.7);
+  background-position: 50% 50%;
+  background-repeat: no-repeat no-repeat;
+  background-size: cover;
+  border: 1px solid #000;
+  display: inline-block !important;
+  height: 20px;
+  width: 14px;
+  margin-left: 35px;
+  margin-top: -28px;
+  position: absolute;
+}
+
+:hover + .hide {
+  height: 50px;
+  width: 34px;
+  margin-left: 35px;
+  margin-top: -58px;
+}
+
+/* Tag review overrides */
+
+td[class^='td']:nth-of-type(6) {
+  background-color: transparent;
+  display: inline-block;
+  line-height: 16px !important;
+  width: 50%;
+  padding: 5px;
+  position: absolute;
+  font-family: Verdana, Arial;
+  visibility: hidden;
+  font-size: 10px;
+  z-index: 2;
+}
+
+td[class^='td']:nth-of-type(6) span {
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+  white-space: pre-wrap;
+}
+
+span[id*="tagRow"] {
+  display: block !important;
+  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(192, 108, 133, 0.7);
+  padding-left: 10px;
+  padding: 5px;
+}
+
+span[id*="tagLinks"] {
+  display: none !important;
+}
+
+@-webkit-keyframes show-tags {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes show-tags {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+tr:hover td[class^='td']:nth-of-type(6){
+  visibility: visible;
+  -webkit-animation-name: show-tags;
+  -webkit-animation-duration: 0.4s;
+  animation-name: show-tags;
+  animation-duration: 0.4s;
+}
+
+.table_header:nth-of-type(6) {
+  display: none;
+}
+
+td:nth-of-type(6) small {
+  display: none;
+}
+
+#copyright {
+  padding-top: 6px;
+  text-align: center;
+  color: #fff;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+               #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+}

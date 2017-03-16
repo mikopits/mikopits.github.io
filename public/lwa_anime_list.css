@@ -1,7 +1,7 @@
-@import url(https://dl.dropboxusercontent.com/u/51521170/css_import_shy_imouto.css);
+@import url(https://raw.githubusercontent.com/mikopits/mikopits.github.io/master/public/css_import_shy_imouto.css);
 @import url(http://fonts.googleapis.com/css?family=Autour+One);
-@import url(https://dl.dropboxusercontent.com/u/51521170/topbar.css);
-@import url(https://dl.dropboxusercontent.com/u/51521170/reviews.css);
+@import url(https://raw.githubusercontent.com/mikopits/mikopits.github.io/master/public/topbar.css);
+@import url(https://raw.githubusercontent.com/mikopits/mikopits.github.io/master/public/reviews.css);
 
 /* TODO: feels a little cluttered overall now */
 /* FIXME: laggy on large lists*/
